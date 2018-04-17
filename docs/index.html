@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Doação - Ethereum SP</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+</head>
+
+<body>
+    <div class="ui menu">
+        <div class="ui container">
+            <div href="#" class="header item">Ethereum SP</div>
+            <div class="ui simple dropdown item">
+                Saiba Mais!<i class="dropdown icon"></i>
+                <div class="menu">
+                    <a class="item" href="https://meetup.com/ethereum_sp" target="_blank">Ethereum SP</a>
+                    <a class="item" href="https://ethereum.org/" target="_blank">Ethereum</a>
+                    <a class="item" href="https://github.com/ethereum/web3.js/" target="_blank">Web3.js</a>
+                    <div class="divider"></div>
+                    <div class="header">Colaboradores</div>
+                    <a class="item" href="https://github.com/falehenrique" target="_blank">Henrique Leite</a>
+                    <a class="item" href="https://github.com/esdrasedu" target="_blank">Esdras Rosa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui two column centered grid box">
+        <div class="row">
+            <div class="column">
+                <div id="postedMessage" class="ui success message hidden">
+                    <!-- Update successful message -->
+                    <i class="close icon"></i>
+                    <div class="header">
+                        Doação concluida
+                    </div>
+                    <p>Grato pela sua doação</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui basic modal" id="no-web3-modal">
+        <div class="ui icon header">
+            <i class="red remove icon"></i> Ops conexão com metamask não encontrada.
+        </div>
+        <div class="content" style="text-align: center">
+            <p>Você precisa instalar o MetaMask para poder interagir com o Dapp. <a href="https://metamask.io">https://metamask.io</a> </p>
+        </div>
+    </div>
+
+    <div class="ui two column centered grid">
+      <div id="transactionMessage" class="ui feed message hidden">
+        <div class="event">
+          <div class="label">
+            <i class="clock icon"></i>
+          </div>
+          <div class="content">
+            <div class="summary">
+              Sua ordem <a href="#" id="transactionLink" target="_blank">endereco</a>
+              <div class="date">Mainnet</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+            <div class="column">
+              <div class="ui segment">
+                    <div class="ui inverted dimmer" id="dimmer">
+                        <div class="ui text loader">Enviando ETH ...</div>
+                    </div>
+                    <div class="ui form">
+                        <h4 class="ui horizontal divider header">Fazer uma doação</h4>
+                        <div class="field">
+                            <label for="valueInput">Valor (em ETH)</label>
+                            <input id="valueInput" type="number" min="0.001" max="1" step="0.001" value="0.001" />
+                        </div>
+                        <div class="field">
+                            <label for="accounts_list">Seu endereço</label>
+                            <select id="accounts_list" class="ui fluid dropdown"></select>
+                        </div>
+                        <button id="submit" class="ui button">Doar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui feed">
+          <div class="event">
+            <div class="label">
+              <i class="certificate icon"></i>
+            </div>
+            <div class="content">
+              <div class="summary">
+                Vejo o smart contract no etherscan.io <a href="#" id="contractLink" target="_blank">endereco</a>
+                <div class="date">Mainnet</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    <script src="web3.min.js"></script>
+    <script src="contract.js"></script>
+
+</body>
+</html>
